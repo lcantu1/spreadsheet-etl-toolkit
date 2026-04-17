@@ -1,4 +1,4 @@
-# 📊 Google Sheets ETL & State Automator
+# 📊 Spreadsheet ETL Toolkit
 
 A custom-built Google Apps Script (GAS) suite designed to parse, deduplicate, and visually synchronize large datasets without hitting Google's API execution limits. 
 
@@ -31,7 +31,7 @@ This repository also includes a custom Python CLI tool (`generate_data.py`) util
 **1. Prepare Your Google Sheet (Quick Start)**
 1. Create a new Google Sheet.
 2. **CRITICAL:** Rename the primary tab to exactly `MASTER` (all caps). The script relies on this precise naming convention to execute its parsing and extraction functions.
-3. Import the provided `tests/sample_data.csv` into the `MASTER` tab.
+3. Import the provided `tests/mock_data.csv` into the `MASTER` tab.
 
 **2. Deploy the Apps Script**
 1. Navigate to `Extensions` > `Apps Script`.
@@ -47,3 +47,15 @@ python tests/generate_data.py --rows 500 --output test_data.csv
 
 # Generate a 10,000-row dataset for performance stress-testing
 python tests/generate_data.py --rows 10000 --output heavy_test_data.csv
+```
+
+## 📁 Repository Structure
+```text
+spreadsheet-etl-toolkit/
+├── src/
+│   └── Code.js              # The core Google Apps Script suite
+├── tests/
+│   ├── generate_data.py     # Python CLI tool for seeding mock datasets
+│   └── mock_data.csv        # A lightweight dataset for immediate UI testing
+└── README.md
+```
